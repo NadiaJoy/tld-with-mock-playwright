@@ -2,8 +2,7 @@ import { expect, test } from '@playwright/test'
 import { SERVICE_URL } from '../../../config/env-data'
 
 test('Sign in flow with mock', async ({ page }) => {
-  const jwt =
-    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYW5paWx2IiwiZXhwIjoxNzY1MjI4ODY2LCJpYXQiOjE3NjUyMTA4NjZ9.mMTClk-De79o5iwvoVP-zOv1BZkgEKJZybER53FsBZVcNn5JCHi8h95wz_-3 f45WXWhDgyKaP34ypUUC5BGCTA'
+  const jwt = 'eyJh'
 
   await page.route('**/login/student', async (route) => {
     await route.fulfill({

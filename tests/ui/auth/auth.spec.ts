@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test'
 import { SERVICE_URL } from '../../../config/env-data'
 import { fakeJwt } from '../../utils/jwt-generator'
 
-test.only('Sign in flow with mock', async ({ page }) => {
+test('Sign in flow with mock', async ({ page }) => {
   const jwt = fakeJwt()
 
   await page.route('**/login/student', async (route) => {

@@ -1,4 +1,5 @@
 import { Page } from '@playwright/test'
+import { Locator } from 'playwright-core'
 
 export class OrderPage {
   readonly page: Page
@@ -13,6 +14,12 @@ export class OrderPage {
   readonly orderItem1
   readonly orderItem2
   readonly orderItem3
+  readonly userNameInput
+  readonly userPhoneInput
+  readonly commentInput
+  readonly createOrderSubmitButton
+  readonly createdOrderPopup
+  readonly createdOrderPopupText
 
   constructor(page: Page) {
     this.page = page
@@ -27,5 +34,11 @@ export class OrderPage {
     this.orderItem1 = page.getByTestId('order-item-1')
     this.orderItem2 = page.getByTestId('order-item-2')
     this.orderItem3 = page.getByTestId('order-item-3')
+    this.userNameInput = page.getByTestId('username-input')
+    this.userPhoneInput = page.getByTestId('phone-input')
+    this.commentInput = page.getByTestId('comment-input')
+    this.createOrderSubmitButton = page.getByTestId('createOrder-button')
+    this.createdOrderPopup = page.getByTestId('orderSuccessfullyCreated-popup')
+    this.createdOrderPopupText = page.getByText('Tracking code: ')
   }
 }
